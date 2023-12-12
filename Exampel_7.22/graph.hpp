@@ -26,15 +26,15 @@ int timew;
 bool finished;
 int tree_out_degree[MAXV];
 int reachable_ancestor[MAXV];
-void initialize_graph(Graph *g, bool directed){
+void initialize_graph(Graph *g, bool directed, int nver){
      
-    g->nvertices = 0; 
+    g->nvertices = nver; 
     g->nedges = 0; 
     g->directed = directed; 
-    for (int i = 1; i <= MAXV; i++) 
+    for (int i = 1; i <= MAXV; i++){ 
         g->degree[i] = 0; 
-    for (int i = 1; i <= MAXV; i++) 
         g->edges[i] = NULL;
+    }
 }
 
 void read_graph(Graph *g, bool directed) { 
@@ -93,5 +93,4 @@ void process_edge(int х, int у){
 void process_vertex_early(int v){
     reachable_ancestor[v] = v;
 }
-
 

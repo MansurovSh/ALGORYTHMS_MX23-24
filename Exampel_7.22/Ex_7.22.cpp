@@ -138,7 +138,6 @@ void dfs(Graph *g, int v){     /*Поиск в глубину*/
 
 
 
-
 int main(){
     
     Graph g;

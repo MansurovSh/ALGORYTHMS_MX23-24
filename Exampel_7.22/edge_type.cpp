@@ -3,7 +3,7 @@
 /// @author Mansurov Sh.
 
 #include <iostream>
-#include "dfs.cpp"
+#include "graph.hpp"
 
 #define TREE 2
 #define BACK  3

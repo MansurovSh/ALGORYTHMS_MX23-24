@@ -38,17 +38,28 @@ void dfs(Graph *g, int v){     /*Поиск в глубину*/
 
 
 int main(){
-    Graph *g;
-    g->directed = true;
-    g->edges
-    for(int i = 0; i < (g -> nvertices) ; i++){
-        g -> degree[i] = 0;
-        g -> edges[i] = NULL
-    }
+   
+    Graph g;
 
-    insert_edge(g, 2,4,true);
-    insert_edge(g, 3,5,true);
-    insert_edge(g, 1,6,true);
+    /* Инициализация графа */
+    /* Инициализация списка смежности */
+    initialize_graph(&g, true, 8);
+
+
+    /* Добавление ребер */
+    insert_edge(&g, 1, 2, true);
+    insert_edge(&g, 3, 1, true);
+    insert_edge(&g, 2, 5, true);
+    insert_edge(&g, 2, 4, true);
+    insert_edge(&g, 5, 3, true);
+    insert_edge(&g, 5, 4, true);
+    insert_edge(&g, 6, 3, true);
+    insert_edge(&g, 4, 6, true);
+    
+    
+    dfs(&g,1);
+    print_graph(&g);
+    std::cout<<edge_classification(2,6);
 
     
 }
