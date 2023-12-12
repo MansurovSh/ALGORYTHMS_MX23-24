@@ -3,17 +3,17 @@
 /// @author Mansurov Sh.
 
 #include "graph.hpp"
+#include "edge_type.cpp"
 
 
-void dfs(Graph *g, int v){ 
+void dfs(Graph *g, int v){     /*Поиск в глубину*/
     Edgenode *р; 
     int у; 
     if (finished) 
         return; 
-    discovered[v] = true; 
-    time = time + 1; 
-    entry_time[v] = time; 
-     
+    discovered[v] = true;  
+    time = time + 1;
+    entry_time[v] = time;
     process_vertex_early(v); 
     р = g->edges[v]; 
     while (р != NULL){ 
@@ -30,8 +30,25 @@ void dfs(Graph *g, int v){
             return; 
         р = p -> next;
     } 
-    process_vertex_late(v); 
-    time = time + 1; 
-    exit_time[v] = time ; 
+    //process_vertex_late(v);
+    time = time + 1;
+    //exit_time[v] = time;  
     processed[v] = true;
+}
+
+
+int main(){
+    Graph *g;
+    g->directed = true;
+    g->edges
+    for(int i = 0; i < (g -> nvertices) ; i++){
+        g -> degree[i] = 0;
+        g -> edges[i] = NULL
+    }
+
+    insert_edge(g, 2,4,true);
+    insert_edge(g, 3,5,true);
+    insert_edge(g, 1,6,true);
+
+    
 }
